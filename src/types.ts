@@ -1,6 +1,7 @@
-export interface User {
+  export interface User {
     id: string;
     name: string;
+    email?: string | null;
     avatar: string;
     role: 'student' | 'faculty' | 'admin';
     department: string;
@@ -10,12 +11,13 @@ export interface User {
       github?: string;
     };
     resumeUrl?: string;
+    createdAt?: string;
   }
   
   export interface Post {
     id: string;
     title: string;
-    content: string | File;
+    content: string;
     authorId: string;
     communityId: string;
     communityName: string;

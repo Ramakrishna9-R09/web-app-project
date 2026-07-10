@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from './firebaseConfig';
+import { User } from './types';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
@@ -25,7 +26,7 @@ const App = () => {
         
         if (!userDoc.exists()) {
           // Create new user document if first time
-          const newUser = {
+          const newUser: User = {
             id: user.uid,
             name: user.displayName || 'VIT Student',
             email: user.email,

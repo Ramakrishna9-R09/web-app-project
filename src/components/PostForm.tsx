@@ -16,11 +16,11 @@ export default function PostForm({ communityId }: PostFormProps) {
     if (!title.trim() || !content.trim()) return;
 
     const newPost = {
-      id: Date.now().toString(),
       title: title.trim(),
       content: content.trim(),
       authorId: currentUser?.id || '',
       communityId: communityId || 'general',
+      communityName: 'General',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       likes: 0,

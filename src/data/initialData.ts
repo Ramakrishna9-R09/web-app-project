@@ -48,6 +48,7 @@ export const initialPosts: Post[] = Array.from({ length: 50 }, (_, i) => ({
   ][i] : `This is sample post content ${i + 1}. It contains some text to demonstrate how the infinite scroll works with multiple posts.`,
   authorId: '1',
   communityId: ['comp-sci', 'campus-life', 'research-hub', 'tech-club'][i % 4],
+  communityName: ['Computer Science', 'Campus Life', 'Research Hub', 'Tech Club'][i % 4],
   createdAt: new Date(Date.now() - i * 3600 * 1000).toISOString(),
   updatedAt: new Date(Date.now() - i * 3600 * 1000).toISOString(),
   likes: Math.floor(Math.random() * 100),
